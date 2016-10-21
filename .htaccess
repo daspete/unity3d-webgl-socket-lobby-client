@@ -1,7 +1,7 @@
 RewriteEngine on
 
 RewriteCond %{HTTP:Accept-encoding} gzip
-RewriteRule (.*)unity(.*)\.js $1Compressed$2\.jsgz [L]
+RewriteRule (.*)unity(.*)\webgl.js $1Compressed$2\.jsgz [L]
 RewriteRule (.*)unity(.*)\.data $1Compressed$2\.datagz [L]
 RewriteRule (.*)unity(.*)\.mem $1Compressed$2\.memgz [L]
 RewriteRule (.*)unity(.*)\.unity3d $1Compressed$2\.unity3dgz [L]
