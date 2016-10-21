@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type='text/javascript'>
+      var Module = {
+        TOTAL_MEMORY: 268435456,
+        errorhandler: null,         // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+        compatibilitycheck: null,
+        dataUrl: "unity/webgl.data",
+        codeUrl: "unity/webgl.js",
+        memUrl: "unity/webgl.mem",
+        
+      };
+    </script>
+</head>
+<body>
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="720px" width="1280px"></canvas>
+
+    <script src="unity/UnityLoader.js"></script>
+    <script src="dist/app.js"></script>
+</body>
+</html>
