@@ -49,6 +49,8 @@ class WebSocketLobby {
     ConnectToGameServer(){
         this.currentConnectionTimeout = 0;
 
+        console.log(this.gameServerUrl);
+
         this.socket = io(this.gameServerUrl);
 
         this.socket.on('connect', this.OnConnected.bind(this));
