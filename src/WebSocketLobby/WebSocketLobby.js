@@ -49,15 +49,42 @@ class WebSocketLobby {
     ConnectToGameServer(){
         this.currentConnectionTimeout = 0;
 
-        console.log(this.gameServerUrl);
+        //var url = this.GetConnectionUrl(this.gameServerUrl);
 
-        this.socket = io(this.gameServerUrl);
+        //this.socket = io.connect(url.url, {path: url.path});
+        this.socket = io.connect(this.gameServerUrl);
 
         this.socket.on('connect', this.OnConnected.bind(this));
         this.socket.on('disconnect', this.OnDisconnected.bind(this));
     }
 
+    /*GetConnectionUrl(origUrl){
+        var urlSplit = origUrl.replace('http://', '').split('/');
+        var url = origUrl;
+        var path = '/socket.io';
+
+        if(urlSplit.length > 1){
+            url = 'http://' + urlSplit[0];
+            path = '/';
+
+            for(var i = 1; i < urlSplit.length; i++){
+                if(urlSplit[i] != '')
+                    path += urlSplit[i] + '/';
+            }
+
+            path += 'socket.io';
+        }
+
+        return {
+            url: url,
+            path: path
+        };
+    }*/
+
     JoinLobby(){
+        //var url = this.GetConnectionUrl(this.gameServerUrl);
+
+        //this.roomSocket = io.connect(url.url + 'rooms', { path: url.path });
         this.roomSocket = io.connect(this.gameServerUrl + 'rooms');
         this.roomSocket.on('connect', this.OnConnectedToRoom.bind(this));
 
