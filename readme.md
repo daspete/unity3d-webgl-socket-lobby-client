@@ -7,10 +7,17 @@ To get the system run, you also need two more packages:
 * [the Unity3D AssetStore package]()
 
 ## Requirements
-* NodeJS with the `gulp-cli` package installed
+* NodeJS 6.2
+* `gulp-cli` npm package installed
 
 ## Installation
-Clone this repository to a destination of your choice.
+Clone this repository to a destination of your choice and start
+
+```
+nvm install
+```
+
+in that folder.
 
 ## Unity3D game file destination
 Copy your Unity3D webgl game files
