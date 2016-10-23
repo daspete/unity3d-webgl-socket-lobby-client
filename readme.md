@@ -45,3 +45,15 @@ this.socket.emit('player-hit-another', {
     hitTarget: 'the player id of the hit target'
 });
 ```
+
+#### Send datas to the unity game
+When you got a socket message, the unity game itself also needs to know about it. We can send a message to the unity WebGL game with `this.SendToGame`, where we set the receiver function and the datas for it. Just keep in mind, that the data needs to be stringified to get recognized in the game itself.
+
+So, for example, if we got hit by an ememy, we could just write
+
+```
+this.SendToGame('SocketPlayerWasHit', JSON.stringify({
+    'playerID': 'player id of the enemy',
+    'damage': 10
+}));
+```
