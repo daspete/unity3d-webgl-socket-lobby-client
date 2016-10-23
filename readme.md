@@ -11,13 +11,12 @@ To get the system run, you also need two more packages:
 * `gulp-cli` npm package installed
 
 ## Installation
-Clone this repository to a destination of your choice and start
-
+Clone this repository to a destination of your choice, then go to the repository folder and start
 ```
 nvm install
 ```
 
-in that folder.
+in the shell.
 
 ## Unity3D game file destination
 Copy your Unity3D webgl game files
@@ -43,7 +42,7 @@ At the `StartClient` function, you can set your socket event listeners.
 
 For example, if you want to create a new event listener called `player-was-hit`, then you can just write
 
-```
+```javascript
 this.socket.on('player-was-hit', function(){
     console.log('Player was hit');
 });
@@ -56,7 +55,7 @@ To send datas to other players, you need to use the `this.socket.emit` function.
 
 For example, if you want to send a message `player-hit-another`, you can write
 
-```
+```javascript
 this.socket.emit('player-hit-another', {
     playerID: window.webglSocketLobby.connectionID,
     hitTarget: 'the player id of the hit target'
@@ -68,7 +67,7 @@ When you got a socket message, the unity game itself also needs to know about it
 
 So, for example, if we got hit by an ememy, we could just write
 
-```
+```javascript
 this.SendToGame('SocketPlayerWasHit', JSON.stringify({
     'playerID': 'player id of the enemy',
     'damage': 10
