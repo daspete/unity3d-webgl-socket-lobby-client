@@ -57,7 +57,7 @@ For example, if you want to send a message `player-hit-another`, you can write
 
 ```javascript
 this.socket.emit('player-hit-another', {
-    playerID: window.webglSocketLobby.connectionID,
+    playerID: this.playerID,
     hitTarget: 'the player id of the hit target'
 });
 ```
