@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Unity3D WebGL Socket Lobby Demo</title>
     <script type='text/javascript'>
       var Module = {
         TOTAL_MEMORY: 268435456,
-        errorhandler: null,         // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+        errorhandler: null,
         compatibilitycheck: null,
         dataUrl: "unity/webgl.data",
         codeUrl: "unity/webgl.js",
@@ -14,10 +14,56 @@
         
       };
     </script>
+
+    <style>
+        body {
+            background-color: #0f1218;
+        }
+
+        .webgl-container {
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .webgl-loader-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 101;
+            background-color: #0f1218;
+            color: #fff;
+        }
+
+        .progress-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 40px;
+            margin-left: -25%;
+            margin-top: -20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="720px" width="1280px"></canvas>
+    <div class="webgl-container">
+        <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" width="1280" height="720" style="width: 100%;"></canvas>
+        <button class="waves-effect waves-light btn orange darken-4" onclick="SetFullscreen(1);">Fullscreen</button>
+        <div class="webgl-loader-container">
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
+                <div class="progress-message">Loading game, please wait...</div>
+                <div class="progress-value">depending on your connection, this could take a while</div>
+            </div>
+        </div>
+    </div>
 
+    <script src="unity/UnityProgress.js"></script>
     <script src="unity/UnityLoader.js"></script>
     <script src="dist/app.js"></script>
 </body>
