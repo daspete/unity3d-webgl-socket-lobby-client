@@ -12,6 +12,16 @@ To get the system run, you also need two more packages:
 ## Installation
 Clone this repository to a destination of your choice.
 
+## Unity3D game file destination
+Copy your Unity3D webgl game files
+ 
+* webgl.jsgz
+* webgl.datagz
+* webgl.memgz
+* UnityLoader.js
+
+to the `/unity` folder of your cloned repository.
+
 ## Editing the client
 
 ### Gulp watcher
@@ -57,3 +67,4 @@ this.SendToGame('SocketPlayerWasHit', JSON.stringify({
     'damage': 10
 }));
 ```
+
