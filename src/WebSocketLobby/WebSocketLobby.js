@@ -122,6 +122,7 @@ class WebSocketLobby {
     }
 
     OnGameStarted(){
+        this.gameClient.SetPlayerID(this.connectionID);
         this.gameClient.StartReceiver({
             socket: this.roomSocket,
             roomID: this.roomID

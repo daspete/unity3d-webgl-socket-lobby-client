@@ -3,11 +3,15 @@ class GameClient {
     constructor(){
         this.socket = null;
         this.roomID = null;
-        this.playerID = window.webglSocketLobby.connectionID;
+        this.playerID = null;
 
         this.unityGameReceiverObject = 'GameManager';
 
         window.gameClient = this;
+    }
+
+    SetPlayerID(playerID){
+        this.playerID = playerID;
     }
 
     StartReceiver(data){
