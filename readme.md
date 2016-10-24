@@ -4,7 +4,7 @@ This is the client of the Unity3D-WebGL-Socket-Lobby-System.
 To get the system run, you also need two more packages:
 
 * [the server package](https://github.com/daspete/unity3d-webgl-socket-lobby-server)
-* [the Unity3D AssetStore package]()
+* [the Unity3D AssetStore package](http://u3d.as/CjP)
 
 A detailed tutorial, on how to use this system is available at [http://tutorials.daspete.at/unity3d/webglsocketlobby](http://tutorials.daspete.at/unity3d/webglsocketlobby)
 
